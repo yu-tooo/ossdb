@@ -1,9 +1,11 @@
 services:
-  db:
-    image: postgres:15.15
+  postgres:
+    build: .
+    container_name: postgres
     environment:
       POSTGRES_USER: y-morita
       POSTGRES_PASSWORD: password
+      PGDATA: /var/lib/postgresql/data
     ports:
       - "5432:5432"
     volumes:
